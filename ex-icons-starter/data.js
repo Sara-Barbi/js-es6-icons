@@ -1,4 +1,4 @@
-[
+let tessereArray =[
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -113,16 +113,19 @@
 	}
 ];
 
-let container = document.getElementById("containertessere");
+let containerRow = document.getElementById("containertessere");
 
-container.innerHTML+= `
-<div class="row" >
-    <div class="col-2 d-flex align-items-center justify-content-center styletessera">
-        <div class="content text-center">
-	        <span class="icona">:(</span>
-	        <div class="nome">contenuto</div>
+for( let i=0;  i<tessereArray.length  ; i++){
+
+	containerRow.innerHTML+= `
+
+    <div class="col-2 d-flex align-items-center justify-content-center styletessera g-4">
+	    <div class="content text-center ${tessereArray[i].color}">
+		    <i class=" ${tessereArray[i].family}-${tessereArray[i].prefix}${tessereArray[i].type}"></i>
+		    <div class="nome">${tessereArray[i].name}</div>
 	    </div> 
     </div>
-</div>
 
-`
+		
+		`
+}
