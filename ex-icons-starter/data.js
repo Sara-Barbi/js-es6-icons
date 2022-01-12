@@ -112,3 +112,17 @@
 		color: 'blue'
 	}
 ];
+
+let container = document.getElementById("containertessere");
+
+container.innerHTML+= `
+<div class="row" >
+    <div class="col-2 d-flex align-items-center justify-content-center styletessera">
+        <div class="content text-center">
+	        <span class="icona">:(</span>
+	        <div class="nome">contenuto</div>
+	    </div> 
+    </div>
+</div>
+
+`
