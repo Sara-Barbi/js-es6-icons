@@ -137,18 +137,43 @@ function creaTessere(){
 function cambio(){
 	document.getElementById("tipologia").addEventListener("click",function(){
 		let tipo = this.value;
+
 		
-		
-		
-		if(tipo == 'all'){
-			containerRow.innerHTML="";
-			creaTessere();
+		if(tipo == "all"){
+			   containerRow.innerHTML="";
+			   creaTessere(tessereArray,containerRow);
 			
+		}else if(tipo == "animal"){
+			containerRow.innerHTML="";
+		    
+			let arrayAnimal = tessereArray.filter((elemento) => {
+
+				if(elemento.type == "animal"){
+					
+					return true;
+					
+				}else{
+					return false
+				}
+				
+			})
+		
+		
+		
+		
+			
+		
+			console.log(arrayAnimal);
 		}
 	})
+	
 }
+
+
+
 cambio()		
-		/*
+
+/*
 
 
 function disegnaIcone( colore )
