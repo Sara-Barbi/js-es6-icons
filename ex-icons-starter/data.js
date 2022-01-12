@@ -116,14 +116,14 @@ let tessereArray =[
 let containerRow = document.getElementById("containertessere");
 
 
-function creaTessere(){
+function creaTessere(tessereArray,containerRow){
 	for( let i=0;  i<tessereArray.length  ; i++){
 
 		containerRow.innerHTML+= `
 	
 		<div class="col-2 d-flex align-items-center justify-content-center styletessera g-4 ">
 			<div class="content text-center ${tessereArray[i].color}">
-				<i class=" ${tessereArray[i].family}-${tessereArray[i].prefix}${tessereArray[i].type}"></i>
+				<i class=" ${tessereArray[i].family} ${tessereArray[i].prefix}${tessereArray[i].name}"></i>
 				<div class="nome">${tessereArray[i].name}</div>
 			</div> 
 		</div>
@@ -140,30 +140,27 @@ function cambio(){
 
 		
 		if(tipo == "all"){
-			   containerRow.innerHTML="";
-			   creaTessere(tessereArray,containerRow);
+			containerRow.innerHTML="";
+			creaTessere(tessereArray,containerRow);
 			
-		}else if(tipo == "animal"){
+		}else {
 			containerRow.innerHTML="";
 		    
-			let arrayAnimal = tessereArray.filter((elemento) => {
+			let arrayVersatile = tessereArray.filter((elemento) => {
 
-				if(elemento.type == "animal"){
+				if(elemento.type == tipo){                             //dando TIPO rendo questo if disponibilie per tutti i .value 
 					
 					return true;
 					
 				}else{
-					return false
+					return false;
 				}
 				
+				
 			})
-		
-		
-		
-		
 			
+			creaTessere(arrayVersatile,containerRow);                   //richiamando la funzione la attivo e faccio vedere gli elementi a schermo
 		
-			console.log(arrayAnimal);
 		}
 	})
 	
@@ -173,13 +170,9 @@ function cambio(){
 
 cambio()		
 
-/*
 
 
-function disegnaIcone( colore )
-{
-    const icone = tessereArray.filter( elemento => elemento == colore )
-}
 
-console.log(arrayColor);
-*/
+
+
+
