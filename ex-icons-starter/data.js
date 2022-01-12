@@ -115,23 +115,46 @@ let tessereArray =[
 
 let containerRow = document.getElementById("containertessere");
 
-for( let i=0;  i<tessereArray.length  ; i++){
 
-	containerRow.innerHTML+= `
+function creaTessere(){
+	for( let i=0;  i<tessereArray.length  ; i++){
 
-    <div class="col-2 d-flex align-items-center justify-content-center styletessera g-4 ">
-	    <div class="content text-center ${tessereArray[i].color}">
-		    <i class=" ${tessereArray[i].family}-${tessereArray[i].prefix}${tessereArray[i].type}"></i>
-		    <div class="nome">${tessereArray[i].name}</div>
-	    </div> 
-    </div>
+		containerRow.innerHTML+= `
 	
-	`
-};
+		<div class="col-2 d-flex align-items-center justify-content-center styletessera g-4 ">
+			<div class="content text-center ${tessereArray[i].color}">
+				<i class=" ${tessereArray[i].family}-${tessereArray[i].prefix}${tessereArray[i].type}"></i>
+				<div class="nome">${tessereArray[i].name}</div>
+			</div> 
+		</div>
+		
+		`
 
-const selezione = tessereArray.filter((elemento)=>{
-    if(elemento.classList.contain())
-
-})
+	};
+}
 
 
+function cambio(){
+	document.getElementById("tipologia").addEventListener("click",function(){
+		let tipo = this.value;
+		
+		
+		
+		if(tipo == 'all'){
+			containerRow.innerHTML="";
+			creaTessere();
+			
+		}
+	})
+}
+cambio()		
+		/*
+
+
+function disegnaIcone( colore )
+{
+    const icone = tessereArray.filter( elemento => elemento == colore )
+}
+
+console.log(arrayColor);
+*/
