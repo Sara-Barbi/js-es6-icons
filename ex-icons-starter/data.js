@@ -121,9 +121,9 @@ function creaTessere(tessereArray,containerRow){
 
 		containerRow.innerHTML+= `
 	
-		<div class="col-2 d-flex align-items-center justify-content-center styletessera g-4 ">
+		<div class="col-2 d-flex align-items-center justify-content-center styletessera m-4 ">
 			<div class="content text-center ${tessereArray[i].color}">
-				<i class=" ${tessereArray[i].family} ${tessereArray[i].prefix}${tessereArray[i].name}"></i>
+				<i class="icona ${tessereArray[i].family} ${tessereArray[i].prefix}${tessereArray[i].name}"></i>
 				<div class="nome">${tessereArray[i].name}</div>
 			</div> 
 		</div>

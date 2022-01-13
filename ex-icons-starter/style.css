@@ -1,8 +1,13 @@
 .styletessera{
-    height: 70px;
+    height: 90px;
     border: solid black 1px;
-    border-radius: 30px;
+    border-radius: 10px;
+    box-shadow: 3px 6px #8888889e;
 
+}
+.styleback{
+   background-color: cyan;
+   height: 80px;
 }
 
 .orange{
@@ -11,8 +16,18 @@
 
 .green{
    color: green;
+
+}
+.icona{
+   font-size: 25px ;
 }
 
 .blue{
    color: blue;
+
+}
+.h1style{
+   height: 80px;
+   color: rgb(32, 221, 221);
+   font-weight: bolder;
 }
